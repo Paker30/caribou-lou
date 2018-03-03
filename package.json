@@ -1,0 +1,39 @@
+{
+  "name": "caribou-lou",
+  "version": "1.0.0",
+  "description": "My resume asistant",
+  "main": "index.js",
+  "scripts": {
+    "cm": "git-cz",
+    "commitmsg": "validate-commit-msg",
+    "publish": "lerna publish --conventional-commits --message 'chore: publish'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paker30/caribou-lou.git"
+  },
+  "author": "Paco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Paker30/caribou-lou/issues"
+  },
+  "homepage": "https://github.com/Paker30/caribou-lou#readme",
+  "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
+    "cz-lerna-changelog": "^1.2.1",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "husky": "^0.14.3",
+    "lerna": "^2.2.0",
+    "nodemon": "^1.17.1",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
+  }
+}
