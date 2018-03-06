@@ -2,7 +2,17 @@
 
 const Glue = require('glue');
 const DatabaseConfigurations = require('./config/databases');
+const Package = require('../package');
+const Vision = require('vision');
+const Inert = require('inert');
+const HapiSwagger = require('hapi-swagger');
 
+const swaggerOptions = {
+  info: {
+    title: 'Caribou-lou API Documentation',
+    version: Package.version
+  }
+};
 
 const manifest = {
   server: {
@@ -10,6 +20,12 @@ const manifest = {
   },
   register: {
     plugins: [
+      Inert,
+      Vision,
+      {
+        plugin: HapiSwagger,
+        options: swaggerOptions
+      },
       {
         plugin: require('hapi-mongodb'),
         options: DatabaseConfigurations.mongoConnections

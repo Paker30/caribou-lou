@@ -19,6 +19,9 @@
   },
   "private": true,
   "devDependencies": {
-    "lab": "^15.3.0"
+    "hapi-swagger": "^9.1.1",
+    "inert": "^5.1.0",
+    "lab": "^15.3.0",
+    "vision": "^5.3.1"
   }
 }
