@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./src/index",
     "start:dev": "NODE_ENV=development nodemon --inspect ./src/index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "lab -c"
   },
   "author": "Paco",
   "license": "ISC",
@@ -19,6 +19,7 @@
   },
   "private": true,
   "devDependencies": {
+    "code": "^5.2.0",
     "hapi-swagger": "^9.1.1",
     "inert": "^5.1.0",
     "lab": "^15.3.0",
