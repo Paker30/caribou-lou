@@ -1,0 +1,12 @@
+{
+  "name": "caribou-lou-dao",
+  "version": "1.0.0",
+  "description": "Database handler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paco",
+  "license": "ISC",
+  "private": true
+}

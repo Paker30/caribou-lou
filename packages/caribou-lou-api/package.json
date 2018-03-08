@@ -1,0 +1,28 @@
+{
+  "name": "caribou-lou-api",
+  "version": "1.0.0",
+  "description": "It starts the api",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node ./src/index",
+    "start:dev": "NODE_ENV=development nodemon --inspect ./src/index",
+    "test": "lab -c"
+  },
+  "author": "Paco",
+  "license": "ISC",
+  "dependencies": {
+    "caribou-lou-dao": "^1.0.0",
+    "glue": "^5.0.0",
+    "hapi": "^17.2.1",
+    "hapi-mongodb": "^7.1.0",
+    "joi": "^13.1.2"
+  },
+  "private": true,
+  "devDependencies": {
+    "code": "^5.2.0",
+    "hapi-swagger": "^9.1.1",
+    "inert": "^5.1.0",
+    "lab": "^15.3.0",
+    "vision": "^5.3.1"
+  }
+}
