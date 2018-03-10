@@ -15,14 +15,14 @@
     "glue": "^5.0.0",
     "hapi": "^17.2.1",
     "hapi-mongodb": "^7.1.0",
-    "joi": "^13.1.2"
+    "hapi-swagger": "^9.1.1",
+    "joi": "^13.1.2",
+    "inert": "^5.1.0",
+    "vision": "^5.3.1"
   },
   "private": true,
   "devDependencies": {
     "code": "^5.2.0",
-    "hapi-swagger": "^9.1.1",
-    "inert": "^5.1.0",
-    "lab": "^15.3.0",
-    "vision": "^5.3.1"
+    "lab": "^15.3.0"
   }
 }
