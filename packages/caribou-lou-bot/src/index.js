@@ -1,4 +1,7 @@
 'use strict';
-const hapiServer = require('./server');
+const RestifyServer = require('./server');
+const { PORT } = require('./env');
 
-hapiServer.startServer();
+RestifyServer.listen(PORT, () => {
+  console.log('%s listening to %s', RestifyServer.name, RestifyServer.url);
+});

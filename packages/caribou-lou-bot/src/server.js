@@ -1,53 +1,16 @@
 'use strict';
 
-const Glue = require('glue');
-const { PORT } = require('./env');
-const Package = require('../package');
-const Vision = require('vision');
-const Inert = require('inert');
-const HapiSwagger = require('hapi-swagger');
+const Restify = require('restify');
+const Builder = require('botbuilder');
+const { BotConnector } = require('./env');
 
-const swaggerOptions = {
-  info: {
-    title: 'Caribou-lou bot API Documentation',
-    version: Package.version
-  }
-};
 
-const manifest = {
-  server: {
-    port: PORT
-  },
-  register: {
-    plugins: [
-      Inert,
-      Vision,
-      {
-        plugin: HapiSwagger,
-        options: swaggerOptions
-      },
-      require('./plugins/bot-plugin'),
-      require('./messages.POST'),
-    ],
-    options: {
-      once: true
-    }
-  }
-};
+const Server = Restify.createServer();
+const Connector = new Builder.ChatConnector(BotConnector);
 
-const options = {
-  relativeTo: __dirname
-};
+Server.post('/api/messages', Connector.listen());
+new Builder.UniversalBot(Connector, (session) => {
+  session.send('You said: %s', session.message.text);
+});
 
-const startServer = async () => {
-  try {
-    const server = await Glue.compose(manifest, options);
-    await server.start();
-    console.log('hapi days!');
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
-  }
-};
-
-module.exports = { startServer };
+module.exports = Server;
