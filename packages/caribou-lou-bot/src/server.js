@@ -51,9 +51,6 @@ const Bot = new Builder.UniversalBot(Connector, [
 ]);
 
 Bot.dialog(DialogLabels.personal, require('./bot/dialogs/personal'));
-// Bot.dialog(DialogLabels.studies, require('./bot/dialogs/studies'));
-// Bot.dialog(DialogLabels.work, require('./bot/dialogs/work'));
-// Bot.dialog(DialogLabels.skills, require('./bot/dialogs/skills'));
 
 Bot.on('error', (e) => {
   console.log('And error ocurred', e);
