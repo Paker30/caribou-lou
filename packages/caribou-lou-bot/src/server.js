@@ -9,7 +9,7 @@ const Connector = new Builder.ChatConnector(BotConnector);
 const DialogLabels = {
   personal: 'Datos personales',
   studies: 'Estudios',
-  work: 'Experiencia Laboral',
+  professional: 'Experiencia Laboral',
   skills: 'Idiomas y habilidades'
 };
 
@@ -19,7 +19,7 @@ const Bot = new Builder.UniversalBot(Connector, [
     Builder.Prompts.choice(
       session,
       'Hola, soy Oliver, en estos momentos Fran no puede explicarte su CV pero yo puedo ayudarte, ¿qué quieres saber?',
-      [DialogLabels.personal, DialogLabels.studies, DialogLabels.work, DialogLabels.skills],
+      [DialogLabels.personal, DialogLabels.studies, DialogLabels.skills, DialogLabels.professional],
       {
         maxRetries: 3,
         retryPrompt: 'No entiendo que quieres saber, perdona'
@@ -42,15 +42,18 @@ const Bot = new Builder.UniversalBot(Connector, [
         return session.beginDialog(DialogLabels.personal);
       case DialogLabels.studies:
         return session.beginDialog(DialogLabels.studies);
-      case DialogLabels.work:
-        return session.beginDialog(DialogLabels.work);
       case DialogLabels.skills:
         return session.beginDialog(DialogLabels.skills);
+      case DialogLabels.professional:
+        return session.beginDialog(DialogLabels.professional);
     }
   }
 ]);
 
 Bot.dialog(DialogLabels.personal, require('./bot/dialogs/personal'));
+Bot.dialog(DialogLabels.studies, require('./bot/dialogs/studies'));
+Bot.dialog(DialogLabels.skills, require('./bot/dialogs/skills'));
+Bot.dialog(DialogLabels.professional, require('./bot/dialogs/professional'));
 
 Bot.on('error', (e) => {
   console.log('And error ocurred', e);
