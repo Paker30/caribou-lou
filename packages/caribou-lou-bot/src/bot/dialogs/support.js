@@ -1,11 +1,6 @@
 'use strict';
 
-const Restify = require('restify');
 const Builder = require('botbuilder');
-const { BotConnector } = require('./env');
-
-const Server = Restify.createServer();
-const Connector = new Builder.ChatConnector(BotConnector);
 const DialogLabels = {
   personal: 'Datos personales',
   studies: 'Estudios',
@@ -14,12 +9,12 @@ const DialogLabels = {
   support: 'Ayuda'
 };
 
-Server.post('/api/messages', Connector.listen());
-const Bot = new Builder.UniversalBot(Connector, [
+module.exports = [
   (session) => {
+    const Message = '¿Quieres saber algo más?, dime que quieres saber';
     Builder.Prompts.choice(
       session,
-      'Hola, soy Oliver, en estos momentos Fran no puede explicarte su CV pero yo puedo ayudarte, ¿qué quieres saber?',
+      '¿Quieres saber algo más?, dime que quieres saber',
       [DialogLabels.personal, DialogLabels.studies, DialogLabels.skills, DialogLabels.professional],
       {
         maxRetries: 3,
@@ -50,29 +45,6 @@ const Bot = new Builder.UniversalBot(Connector, [
     }
   },
   (session, result) => {
-    session.send(`Si deseas saber más u obtener más información, solo pregunta por ello. Sino, ha sido un placer ayudarte :)`);
     session.endDialog();
   }
-]);
-
-Bot.dialog(DialogLabels.personal, require('./bot/dialogs/personal')).triggerAction({
-  matches: [/personal/i]
-});
-Bot.dialog(DialogLabels.studies, require('./bot/dialogs/studies')).triggerAction({
-  matches: [/estudios/i]
-});;
-Bot.dialog(DialogLabels.skills, require('./bot/dialogs/skills')).triggerAction({
-  matches: [/habilidades/i]
-});;
-Bot.dialog(DialogLabels.professional, require('./bot/dialogs/professional')).triggerAction({
-  matches: [/experiencia/i]
-});;
-Bot.dialog(DialogLabels.support, require('./bot/dialogs/support')).triggerAction(
-  {matches: [/saber más/i, /ayuda/i, /cv/i]}
-);
-
-Bot.on('error', (e) => {
-  console.log('And error ocurred', e);
-});
-
-module.exports = Server;
+];
