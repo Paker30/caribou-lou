@@ -35,5 +35,8 @@
     "commitizen": {
       "path": "./node_modules/cz-lerna-changelog"
     }
+  },
+  "dependencies": {
+    "markdown-pdf": "^8.1.1"
   }
 }

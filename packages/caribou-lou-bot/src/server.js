@@ -11,7 +11,8 @@ const DialogLabels = {
   studies: 'Estudios',
   professional: 'Experiencia Laboral',
   skills: 'Idiomas y habilidades',
-  support: 'Ayuda'
+  support: 'Ayuda',
+  pdf: 'pdf'
 };
 
 Server.post('/api/messages', Connector.listen());
@@ -47,6 +48,8 @@ const Bot = new Builder.UniversalBot(Connector, [
         return session.beginDialog(DialogLabels.skills);
       case DialogLabels.professional:
         return session.beginDialog(DialogLabels.professional);
+      case DialogLabels.pdf:
+        return session.beginDialog(DialogLabels.pfd);
     }
   },
   (session, result) => {
@@ -60,13 +63,16 @@ Bot.dialog(DialogLabels.personal, require('./bot/dialogs/personal')).triggerActi
 });
 Bot.dialog(DialogLabels.studies, require('./bot/dialogs/studies')).triggerAction({
   matches: [/estudios/i]
-});;
+});
 Bot.dialog(DialogLabels.skills, require('./bot/dialogs/skills')).triggerAction({
   matches: [/habilidades/i]
-});;
+});
 Bot.dialog(DialogLabels.professional, require('./bot/dialogs/professional')).triggerAction({
   matches: [/experiencia/i]
-});;
+});
+Bot.dialog(DialogLabels.pdf, require('./bot/dialogs/toPDF')).triggerAction({
+  matches: [/pdf/i]
+});
 Bot.dialog(DialogLabels.support, require('./bot/dialogs/support')).triggerAction(
   {matches: [/saber más/i, /ayuda/i, /cv/i]}
 );
