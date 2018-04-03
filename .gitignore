@@ -7,3 +7,5 @@
 # Project Specific
 node_modules
 *.log
+packages/caribou-lou-bot/resume.md
+packages/caribou-lou-bot/resume.pdf
