@@ -11,6 +11,13 @@ internals.development = {
   }
 };
 
+internals.production = {
+  mongoConnections: {
+    decorate: 'ResumeDb',
+    url: DB_URL
+  }
+};
+
 internals.test = {
   mongoConnections: {
     decorate: 'ResumeDb',
