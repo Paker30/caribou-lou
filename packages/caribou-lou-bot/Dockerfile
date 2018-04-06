@@ -3,7 +3,7 @@ FROM node:9-alpine
 LABEL maintainer="morenocfrancisco86@gmail.com"
 
 # Create the required folder
-WORKDIR /home/$USER
+WORKDIR /home
 
 COPY package.json package.json
 
@@ -15,6 +15,6 @@ RUN npm install --production -q && \
 # Copy the App
 ADD . .
 
-EXPOSE 9000
+EXPOSE 3978
 
 CMD [ "npm", "start" ]
