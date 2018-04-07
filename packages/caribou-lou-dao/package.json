@@ -1,12 +1,14 @@
 {
   "name": "caribou-lou-dao",
   "version": "1.0.0",
-  "description": "Database handler",
+  "description": "Database handler to be used at caribou-lou-api",
   "main": "index.js",
+  "keywords": [
+    "caribou-lou"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Paco",
-  "license": "ISC",
-  "private": true
+  "author": "paker",
+  "license": "MIT"
 }
