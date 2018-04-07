@@ -1,7 +1,7 @@
 {
   "name": "caribou-lou-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "It's the Microsoft bot that interacts with the user and provides the resume information",
   "main": "./src/index.js",
   "scripts": {
     "build": "docker build -t $npm_package_config_image_name:$npm_package_version .",
@@ -9,8 +9,8 @@
     "start:dev": "nodemon --inspect ./src/index",
     "test": "lab -c"
   },
-  "author": "Paco",
-  "license": "ISC",
+  "author": "paker",
+  "license": "MIT",
   "dependencies": {
     "botbuilder": "^3.14.0",
     "markdown-pdf": "^8.1.1",

@@ -1,7 +1,7 @@
 {
   "name": "caribou-lou-api",
   "version": "1.0.0",
-  "description": "It starts the api",
+  "description": "It starts the api that caribou-lou-bot has to use.",
   "main": "./src/index.js",
   "scripts": {
     "build": "docker build -t $npm_package_config_image_name:$npm_package_version .",
@@ -9,8 +9,8 @@
     "start:dev": "NODE_ENV=development nodemon --inspect ./src/index",
     "test": "lab -c"
   },
-  "author": "Paco",
-  "license": "ISC",
+  "author": "paker",
+  "license": "MIT",
   "dependencies": {
     "caribou-lou-dao": "^1.0.0",
     "glue": "^5.0.0",
