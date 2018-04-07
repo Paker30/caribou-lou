@@ -4,6 +4,7 @@
   "description": "It starts the api",
   "main": "./src/index.js",
   "scripts": {
+    "build": "docker build -t $npm_package_config_image_name:$npm_package_version .",
     "start": "NODE_ENV=production node ./src/index",
     "start:dev": "NODE_ENV=development nodemon --inspect ./src/index",
     "test": "lab -c"
@@ -19,6 +20,11 @@
     "joi": "^13.1.2",
     "inert": "^5.1.0",
     "vision": "^5.3.1"
+  },
+  "config": {
+    "image": {
+      "name": "caribou-lou-api"
+    }
   },
   "private": true,
   "devDependencies": {
