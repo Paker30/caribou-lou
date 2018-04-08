@@ -1,6 +1,6 @@
 {
   "name": "caribou-lou-api",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "It starts the api that caribou-lou-bot has to use.",
   "main": "./src/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "url": "git@raspberrypi:Fran/generator-paco.git"
   },
   "dependencies": {
-    "caribou-lou-dao": "^1.1.0",
+    "caribou-lou-dao": "^1.1.1",
     "glue": "^5.0.0",
     "hapi": "^17.2.1",
     "hapi-mongodb": "^7.1.0",

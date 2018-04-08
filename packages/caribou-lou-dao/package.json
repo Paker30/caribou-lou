@@ -1,6 +1,6 @@
 {
   "name": "caribou-lou-dao",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Database handler to be used at caribou-lou-api",
   "main": "index.js",
   "keywords": [
