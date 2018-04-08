@@ -11,6 +11,10 @@
   },
   "author": "paker",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@raspberrypi:Fran/generator-paco.git"
+  },
   "dependencies": {
     "botbuilder": "^3.14.0",
     "markdown-pdf": "^8.1.1",
