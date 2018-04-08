@@ -33,5 +33,6 @@
   "devDependencies": {
     "code": "^5.2.0",
     "lab": "^15.3.0"
-  }
+  },
+  "private": true
 }
