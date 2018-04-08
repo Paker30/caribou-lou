@@ -10,8 +10,8 @@ COPY package.json package.json
 # Install Node dependencies and remove NPM cache
 RUN npm install --production -q && \
     npm cache clean --force && \
-    rm -rf /home/$user/.node-gyp && \
-    rm -rf /tmp/npm-* &&\
+    rm -rf /home/.node-gyp && \
+    rm -rf /tmp/npm-*
 # Copy the App
 ADD . .
 
